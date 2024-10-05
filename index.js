@@ -25,7 +25,9 @@ next(new AppError(`this route not found ${req.originalUrl}`,400))
 
 })
 app.use(globalErrorHandler)
-
+app.get("/",(req,res)=>{
+    res.json({message:"welcom"})
+})
 db().then(() => {
     console.log("DB connect successfully....")
 }).catch(() => {
